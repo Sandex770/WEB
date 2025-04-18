@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pesan Panel</h1>
+    <form id="form-user">
+      <input type="text" id="username" placeholder="Masukkan Username" required />
+      <select id="ram" required>
+        <option value="">Pilih RAM</option>
+        <option value="1gb">1 GB</option>
+        <option value="2gb">2 GB</option>
+        <option value="4gb">4 GB</option>
+        <option value="5gb">5 GB</option>
+        <option value="6gb">1 GB</option>
+        <option value="7gb">2 GB</option>
+        <option value="unli">Unlimited</option>
+      </select>
+      <button type="submit">Lanjutkan</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("form-user").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const ram = document.getElementById("ram").value;
+      window.location.href = `qris.html?username=${encodeURIComponent(username)}&ram=${encodeURIComponent(ram)}`;
+    });
+  </script>
+</body>
+</html>
